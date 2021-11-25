@@ -42,7 +42,7 @@ namespace HealthCheckDemo
 
             services.AddHealthChecksUI(setup =>
             {
-                setup.AddHealthCheckEndpoint("Endpoint 1", "/hc");
+                setup.AddHealthCheckEndpoint("Endpoint 1", $"http://{Dns.GetHostName()}/hc");
             })
             .AddInMemoryStorage();
         }
